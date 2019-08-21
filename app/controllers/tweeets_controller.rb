@@ -41,7 +41,6 @@ class TweeetsController < ApplicationController
       end
     end
   end
-
   
   def destroy
     @tweeet.destroy
@@ -59,6 +58,8 @@ class TweeetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tweeet_params
-      params.fetch(:tweeet, {})
+      params.require(:tweeet).permit(:tweeet)
     end
 end
+
+
