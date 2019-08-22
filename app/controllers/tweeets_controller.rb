@@ -2,7 +2,7 @@ class TweeetsController < ApplicationController
   before_action :set_tweeet, only: [:show, :edit, :update, :destroy]
   
   def index
-    @tweeets = Tweeet.all
+    @tweeets = Tweeet.all.order("created_at DESC")
   end
  
   def show
